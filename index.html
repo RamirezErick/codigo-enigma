@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Código Enigma</title>
+  <link rel="reset" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+      <nav>
+        <h1 class="brand">
+          Código Enigma
+        </h1>
+      </nav>
+    </header>    
+    <main>
+      <div class="contenedor">
+        <div class="columna">
+          <div class="grupo-botones grupo-1">
+            <button id="btnEncriptar" class="boton active" onclick="elegirOperacion('btnDescencriptar', 'btnEncriptar', 'encriptar')">
+              Encriptar
+            </button>                
+            <button id="btnDescencriptar" class="boton"  onclick="elegirOperacion('btnEncriptar', 'btnDescencriptar', 'desencriptar')">
+              desencriptar
+            </button>
+          </div>
+        </div>
+        <div class="columna columna-valor-proceso">
+          <div class="grupo-botones">
+            <div class="grupo-botones  grupo-2">
+              <button  id="botonValorProceso" class="boton active">Texto encriptado</button>
+            </div>
+          </div>
+        </div>        
+      </div>
+      
+      <div class="contenedor-text-area">
+        <div class="columna">
+          <button class="boton-icono boton-borrar" onclick="reiniciar()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+              <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+            </svg>
+          </button>
+          <textarea class="text-area" spellcheck="false" autocomplete="off" rows="10" autofocus onkeyup="procesar()"></textarea>
+          <div class="informacion-textarea">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4m.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
+            </svg>
+            <span>Escribir el texto en minúsculas y sin acentos</span>
+          </div>
+        </div>
+        
+        <div class="columna">
+          <div class="contenido-encriptado">            
+            <textarea class="mensaje-procesado" rows="10" readonly></textarea>
+            <button class="boton-copiar" onclick="btnCopiar()">
+              <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 11C6 8.17157 6 6.75736 6.87868 5.87868C7.75736 5 9.17157 5 12 5H15C17.8284 5 19.2426 5 20.1213 5.87868C21 6.75736 21 8.17157 21 11V16C21 18.8284 21 20.2426 20.1213 21.1213C19.2426 22 17.8284 22 15 22H12C9.17157 22 7.75736 22 6.87868 21.1213C6 20.2426 6 18.8284 6 16V11Z" stroke="#1C274C" stroke-width="1.5"/>
+                <path opacity="0.5" d="M6 19C4.34315 19 3 17.6569 3 16V10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H15C16.6569 2 18 3.34315 18 5" stroke="#1C274C" stroke-width="1.5"/>
+                </svg>
+            </button>
+          </div>
+        </div>
+        
+
+      </div>
+
+      <div class="alerta"></div>
+    </main>
+
+    <div> 
+        <ul class="instrucciones">
+            <li>
+                <h2>Instrucciones</h2>
+
+                <p class="instrucciones-body">¿Cuál es la función de esta aplicación?
+                    Permite encriptar y desencriptar texto.
+                    El texto cifrado puede ser utilizado dentro de un mensaje de texto o guardado en un archivo independiente; al desencriptarlo mediante esta aplicación, se mostrará correctamente.</p>  
+                    <p>Es crucial emplear el texto cifrado en su totalidad, desde el primer hasta el último carácter, sin realizar modificaciones. Cualquier adición de espacios o saltos de línea adicionales impedirá la correcta desencriptación.</p>
+            </li>
+    </div>
+    <footer>
+      <div class="footer-contenedor">
+        &copyCopyright Código Enigma by Erick Ramírez - 2024  
+      </div>
+      <ul>
+        <li>
+            <a href="https://www.linkedin.com/in/erick-ram%C3%ADrez-71358816b/" target="_blank">
+                <img src="imagenes/linkedin-mark.svg" width="19px">
+            </a>
+        </li>
+        
+        <li>
+          <a href="https://github.com/RamirezErick" target="_blank">
+            <img src="imagenes/github-mark-white.svg" width="20px">
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+  
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
